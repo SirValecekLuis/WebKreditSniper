@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "webkredit-sniper"
+version = "0.1.0"
+description = "Klientská knihovna pro WebKredit (API a modely)."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Tobias Janča" }]
+license = { text = "MIT" }
+dependencies = ["requests>=2.32.5"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["webkredit*"]
