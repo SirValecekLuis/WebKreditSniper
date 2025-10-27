@@ -1,4 +1,5 @@
-from webkredit.api import cli_get_day, get_webkredit_url, cli_get_meal_numbers, cli_print_info, cli_check_meals
+from webkredit.api import get_webkredit_url
+from webkredit.cli import cli_get_day, cli_get_meal_numbers, cli_print_info, cli_check_meals
 
 
 def main():
