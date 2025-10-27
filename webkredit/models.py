@@ -7,7 +7,7 @@ class Meal:
         self.ordered_total = meal_data.get("countOrdered", None)
         self.alergens = meal_data.get("note", None)
 
-        if self.name is None or self.number is None or self.available is None or self.ordered_total is None:
+        if self.name is None or self.number is None or self.ordered_total is None:
             raise ValueError("Jídlo obsahuje neplatné informace, prosím, kontaktuje vývojáře.")
 
     def __str__(self):
