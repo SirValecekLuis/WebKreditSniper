@@ -41,7 +41,7 @@ def cli_check_meals(url: str, meal_numbers: list[int]) -> None:
             break
 
         for meal in find_available_meals(meals, meal_numbers):
-            print(f"Jídlo {meal.number} - {meal.name} je nyní dostupné! Počet dostupných jídel: {meal.available}")
+            print(f"Jídlo {meal.number} - {meal.name} je nyní dostupné! Počet dostupných jídel: {meal.available if meal.available is not None else 'neomezeno'}")
 
         time.sleep(10)
 

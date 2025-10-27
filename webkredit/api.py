@@ -85,6 +85,6 @@ def find_available_meals(meals: list[Meal], meal_numbers: list[int]) -> list[Mea
     available_meals = []
     for number in meal_numbers:
         for meal in meals:
-            if meal.number == number and meal.available > 0:
+            if meal.number == number and (meal.available is None or meal.available > 0):
                 available_meals.append(meal)
     return available_meals

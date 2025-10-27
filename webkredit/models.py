@@ -11,4 +11,4 @@ class Meal:
             raise ValueError("Jídlo obsahuje neplatné informace, prosím, kontaktuje vývojáře.")
 
     def __str__(self):
-        return f"Jídlo {self.number}: {self.name} | Počet dostupných jídel: {self.available} | Objednáno porcí celkem: {self.ordered_total} | Alergeny: {self.alergens}"
+        return f"Jídlo {self.number}: {self.name} | Počet dostupných jídel: {self.available if self.available is not None else 'neomezeno'} | Objednáno porcí celkem: {self.ordered_total} | Alergeny: {self.alergens}"
