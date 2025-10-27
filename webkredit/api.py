@@ -30,7 +30,11 @@ def get_day_check(date) -> tuple[None, None, None] | tuple[int, int, int]:
     if '.' not in date:
         return None, None, None
 
-    day, month, year = date.split('.', 2)
+    split = date.split('.', 2)
+    if len(split) != 3:
+        return None, None, None
+
+    day, month, year = split
     if not (day.isdigit() and month.isdigit() and year.isdigit()):
         return None, None, None
 
@@ -42,12 +46,17 @@ def get_day_check(date) -> tuple[None, None, None] | tuple[int, int, int]:
 
 
 def get_meal_numbers_check(meal_numbers: list[str]) -> list[int] | None:
-    if meal_numbers:
-        try:
-            meal_numbers = list(map(int, meal_numbers))
-            return meal_numbers
-        except ValueError:
-            return None
+    int_numbers = []
+    if meal_numbers and len(meal_numbers) < 11:
+        for meal_number in meal_numbers:
+            try:
+                int_number = int(meal_number)
+                if int_number < 1 or int_number > 10:
+                    return None
+                int_numbers.append(int_number)
+            except ValueError:
+                return None
+        return list(set(int_numbers))
 
     return None
 

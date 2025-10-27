@@ -48,7 +48,7 @@ def cli_check_meals(url: str, meal_numbers: list[int]) -> None:
 
 def cli_get_meal_numbers() -> list[int]:
     while True:
-        numbers = input("Zadejte čísla jídel, která chcete sledovat (oddělená čárkami, např. '1, 2, 3'): ").strip()
+        numbers = input("Zadejte čísla jídel, která chcete sledovat v rozmezí 1-10 (oddělená čárkami, např. '1, 2, 3'): ").strip()
         meal_numbers = numbers.split(",")
         meal_numbers = get_meal_numbers_check(meal_numbers)
         if meal_numbers is None:
