@@ -7,6 +7,11 @@ class Meal:
         self.ordered_total = meal_data.get("countOrdered", None)
         self.alergens = meal_data.get("note", None)
         self.in_exchange = meal_data.get("inExchange", None)
+        pictograms = meal_data.get("pictograms") or []
+        self.is_xxl = True if 8 in pictograms else False
+        self.vegan = True if 9 in pictograms else False
+        self.vegetarian = True if -2 in pictograms else False
+        self.gluten_free = True if -3 in pictograms else False
 
         if self.name is None or self.number is None or self.ordered_total is None:
             raise ValueError("Jídlo obsahuje neplatné informace, prosím, kontaktuje vývojáře.")
